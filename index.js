@@ -1,5 +1,4 @@
 const express = require("express");
-
 const fs = require("fs");
 const { google } = require("googleapis");
 const axios = require("axios");
@@ -8,13 +7,25 @@ const cron = require("node-cron");
 const cors = require("cors");
 require("dotenv").config();
 
-// const rogData = require("./data/rog-data-no-gift.js");
-
 const app = express();
 const port = "4000";
-
-app.use(cors());
-
+app.use(
+  cors({
+    origin: "*",
+  })
+);
+// app.use((req, res, next) => {
+//   const allowedOrigins = ["https://test.microstun.com"];
+//   const origin = req.headers.origin;
+//   if (allowedOrigins.includes(origin)) {
+//     res.setHeader("Access-Control-Allow-Origin", origin);
+//   }
+//   // res.header("Access-Control-Allow-Origin", "https://test.microstun.com");
+//   res.header("Access-Control-Allow-Methods", "GET, OPTIONS");
+//   res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+//   res.header("Access-Control-Allow-Credentials", true);
+//   return next();
+// });
 const url = "https://api.onesignal.com/notifications?c=push";
 const credentials = JSON.parse(fs.readFileSync("credentials.json"));
 const SPREADSHEET_ID = "11lHlSReAfoOkDlyosy8XHO4ivfgCJHqnmcBUwVctYmI";
@@ -189,7 +200,7 @@ const fetchRewards = async () => {
 
 // fetchRewards();
 
-app.get("/.netlify/functions/", async (req, res) => {
+app.get("/", async (req, res) => {
   console.log("notify client");
 
   fetchRewards();
@@ -200,10 +211,3 @@ app.get("/.netlify/functions/", async (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
-
-// Export for Netlify Functions
-const handler = ServerlessHttp(app);
-module.exports.handler = async (event, context) => {
-  const result = await handler(event, context);
-  return result;
-};
