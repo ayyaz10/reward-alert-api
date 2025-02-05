@@ -2,10 +2,13 @@
   "name": "reward-alert",
   "version": "1.0.0",
   "main": "index.js",
+  "engine": {
+    "node": "18.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js",
-    "start": "node index.js",
+    "dev": "nodemon ./api/index.js",
+    "start": "node ./api/index.js",
     "vercel-build": "echo hello"
   },
   "presets": [
@@ -35,6 +38,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
-    "@babel/preset-env": "^7.26.0"
+    "@babel/preset-env": "^7.26.0",
+    "vercel": "^41.0.0"
   }
 }
