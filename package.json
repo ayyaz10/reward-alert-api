@@ -2,6 +2,7 @@
   "name": "reward-alert",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "engine": {
     "node": "18.x"
   },
