@@ -6,7 +6,8 @@ const checkAvailability = (rogData) => {
     data: [],
   };
 
-  const sheetData = [];
+  const sheetData1 = [];
+  const sheetData2 = [];
 
   rogData.forEach((each) => {
     const now = new Date().toLocaleTimeString("en-US");
@@ -31,7 +32,7 @@ const checkAvailability = (rogData) => {
       now,
     ];
 
-    sheetData.push(row);
+    sheetData1.push(row);
 
     result.data.push({
       country: each.country,
@@ -39,8 +40,10 @@ const checkAvailability = (rogData) => {
       reward: `${has400 ? "400 " : ""}${has200 ? "200" : ""}`.trim(),
       time: now,
     });
+    // console.log(result.data);
 
     if (has400 || has200) {
+      sheetData2.push(row);
       sendNotification(
         each.country,
         `${has400 ? "400" : ""} ${has200 ? "200" : ""}`.trim()
@@ -48,7 +51,7 @@ const checkAvailability = (rogData) => {
     }
   });
 
-  return sheetData;
+  return { sheetData1, sheetData2 };
 };
 
 export default checkAvailability;

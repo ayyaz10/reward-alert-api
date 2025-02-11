@@ -7,6 +7,7 @@ async function readSheet() {
     spreadsheetId: SPREADSHEET_ID,
     range: "Sheet1",
   });
+  // console.log(res.data.values);
   const obj = transformData(res.data.values);
   return obj;
 }

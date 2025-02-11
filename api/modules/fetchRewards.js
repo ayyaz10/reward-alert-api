@@ -3,6 +3,8 @@ import data from "../data/data.js";
 import checkAvailability from "./checkAvailability.js";
 import writeToSheet from "./writeToSheet.js";
 
+import fs from "fs";
+
 const fetchRewards = async () => {
   const rewardsArray = [];
   try {
@@ -17,6 +19,14 @@ const fetchRewards = async () => {
           Status: reward.Status,
           Point: reward.Point,
         }));
+        // create a data.js file to get data object from server
+        // const jsContent = `const data = ${JSON.stringify(
+        //   response.data.Result.Obj,
+        //   null,
+        //   2
+        // )}`;
+        // fs.writeFileSync("datas.js", jsContent, "utf-8");
+        // console.log(response.data.Result.Obj);
 
         rewardsArray.push({
           country: data[index].country,
@@ -28,11 +38,14 @@ const fetchRewards = async () => {
     });
 
     // Get formatted data for Google Sheets & send notifications
-    const sheetData = checkAvailability(rewardsArray);
-    console.log(sheetData);
+    const { sheetData1, sheetData2 } = checkAvailability(rewardsArray);
+    console.log(sheetData1);
+    console.log(sheetData2);
+
+    // console.log(rewardsArray[0].dataArray);
 
     // Write to Google Sheets
-    await writeToSheet(sheetData);
+    await writeToSheet(sheetData1, sheetData2);
   } catch (error) {
     console.error("❌ Error fetching data:", error.message);
   }

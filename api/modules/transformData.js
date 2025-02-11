@@ -5,6 +5,7 @@ const transformData = (sheetData) => {
     headers.forEach((key, index) => {
       obj[key.split(" ").join("")] = row[index]; // Assign each column value to its respective key
     });
+
     return obj;
   });
 };
