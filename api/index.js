@@ -16,7 +16,6 @@ app.use(
 app.get("/api", async (req, res) => {
   await fetchRewards();
   const obj = await readSheet();
-
   res.json(obj);
 });
 // fetchRewards();

@@ -10,7 +10,11 @@ const checkAvailability = (rogData) => {
   const sheetData2 = [];
 
   rogData.forEach((each) => {
-    const now = new Date().toLocaleTimeString("en-US");
+    // const now = new Date().toLocaleTimeString("en-US");
+    const currentTime = new Date(Date.now())
+      .toISOString()
+      .slice(0, 19)
+      .replace("T", " ");
 
     const has400 = each.dataArray.some(
       (reward) =>
@@ -29,16 +33,15 @@ const checkAvailability = (rogData) => {
       status,
       has400 ? "400" : "",
       has200 ? "200" : "",
-      now,
+      currentTime,
     ];
-
     sheetData1.push(row);
 
     result.data.push({
       country: each.country,
       status: status,
       reward: `${has400 ? "400 " : ""}${has200 ? "200" : ""}`.trim(),
-      time: now,
+      time: currentTime,
     });
     // console.log(result.data);
 

@@ -3,7 +3,7 @@ import data from "../data/data.js";
 import checkAvailability from "./checkAvailability.js";
 import writeToSheet from "./writeToSheet.js";
 
-import fs from "fs";
+// import fs from "fs";
 
 const fetchRewards = async () => {
   const rewardsArray = [];
