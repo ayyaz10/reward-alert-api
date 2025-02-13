@@ -1,5 +1,5 @@
 import sheets from "./sheets.js";
-
+import time from "./time.js";
 const SPREADSHEET_ID = "11lHlSReAfoOkDlyosy8XHO4ivfgCJHqnmcBUwVctYmI";
 
 const writeToSheet = async (sheetData1, sheetData2) => {
@@ -24,7 +24,7 @@ const writeToSheet = async (sheetData1, sheetData2) => {
 
     const statusSheetData = [
       ["Status", "Last Checked"],
-      ["Time", currentTime],
+      ["Time", time],
     ];
     const statusRequest = {
       spreadsheetId: SPREADSHEET_ID,

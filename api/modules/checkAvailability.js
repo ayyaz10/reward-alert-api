@@ -1,5 +1,5 @@
 import sendNotification from "./sendNotification.js";
-
+import time from "./time.js";
 const checkAvailability = (rogData) => {
   const result = {
     status: "ok",
@@ -10,12 +10,6 @@ const checkAvailability = (rogData) => {
   const sheetData2 = [];
 
   rogData.forEach((each) => {
-    // const now = new Date().toLocaleTimeString("en-US");
-    const currentTime = new Date(Date.now())
-      .toISOString()
-      .slice(0, 19)
-      .replace("T", " ");
-
     const has400 = each.dataArray.some(
       (reward) =>
         reward.Point === 400 && reward.Status === 1 && reward.RewardType === 2
@@ -33,7 +27,7 @@ const checkAvailability = (rogData) => {
       status,
       has400 ? "400" : "",
       has200 ? "200" : "",
-      currentTime,
+      time,
     ];
     sheetData1.push(row);
 
@@ -41,7 +35,7 @@ const checkAvailability = (rogData) => {
       country: each.country,
       status: status,
       reward: `${has400 ? "400 " : ""}${has200 ? "200" : ""}`.trim(),
-      time: currentTime,
+      time: time,
     });
     // console.log(result.data);
 

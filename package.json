@@ -27,6 +27,7 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "googleapis": "^144.0.0",
+    "luxon": "^3.5.0",
     "mongodb": "^6.13.0",
     "mongoose": "^8.9.6",
     "netlify-cli": "^18.0.3",
