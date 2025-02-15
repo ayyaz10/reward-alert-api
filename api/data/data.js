@@ -662,6 +662,54 @@ const data = [
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/",
     },
   },
+  // // ea | East Africa
+  // {
+  //   country: "Kenya",
+  //   url: "https://rog.asus.com/elite/api/v2/RewardList?aticket=333a8d1e0bbc49719b2cb9ecfb7d335d&WebsiteCode=ea&systemCode=rog",
+  //   header: {
+  //     Accept: "application/json, text/plain, */*",
+  //     "Accept-Encoding": "gzip, deflate, br, zstd",
+  //     "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
+  //     "API-Key": "Em3l6i7t2qe",
+  //     Cookie: "_gcl_au=1.1.9147428.1738675572; token=j9kadxgy2a8qnw2",
+  //     Priority: "u=1, i",
+  //     Referer: "https://rog.asus.com/ea/elite",
+  //     "Sec-CH-UA": `"Not A(Brand";v="8", "Chromium";v="132", "Google Chrome";v="132"`,
+  //     "Sec-CH-UA-Mobile": "?0",
+  //     "Sec-CH-UA-Platform": `"Windows"`,
+  //     "Sec-Fetch-Dest": "empty",
+  //     "Sec-Fetch-Mode": "cors",
+  //     "Sec-Fetch-Site": "same-origin",
+  //     Token: "j9kadxgy2a8qnw2",
+  //     "User-Agent":
+  //       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36",
+  //   },
+  // },
+  // // wa | West Africa
+  // {
+  //   country: "Nigeria",
+  //   url: "https://rog.asus.com/elite/api/v2/RewardList?aticket=3590cf3a64ed4729bed9460172071666&WebsiteCode=wa&systemCode=rog",
+  //   header: {
+  //     accept: "application/json, text/plain, */*",
+  //     "accept-encoding": "gzip, deflate, br, zstd",
+  //     "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+  //     api_key: "Em3l6i7t2qe",
+  //     cookie: "_gcl_au=1.1.9147428.1738675572; token=j9kadxgy2a8qnw2; ",
+  //     priority: "u=1, i",
+  //     referer: "https://rog.asus.com/wa/elite/",
+  //     "sec-ch-ua":
+  //       '"Not A(Brand";v="8", "Chromium";v="132", "Google Chrome";v="132"',
+  //     "sec-ch-ua-mobile": "?0",
+  //     "sec-ch-ua-platform": '"Windows"',
+  //     "sec-fetch-dest": "empty",
+  //     "sec-fetch-mode": "cors",
+  //     "sec-fetch-site": "same-origin",
+  //     Token: "j9kadxgy2a8qnw2",
+  //     "user-agent":
+  //       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36",
+  //   },
+  // },
+
   //Global
   {
     country: "Spain Global",

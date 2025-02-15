@@ -1,12 +1,20 @@
 import sheets from "./sheets.js";
-import time from "./time.js";
+// import time from "./time.js";
+// import { time, formattedDate } from "./time.js";
+import { DateTime } from "luxon";
+
+const currentTime = DateTime.now()
+  .setZone("Asia/Karachi")
+  .setLocale("ur-PK")
+  .toFormat("HH:mm:ss, dd-MM-yyyy");
+
 const SPREADSHEET_ID = "11lHlSReAfoOkDlyosy8XHO4ivfgCJHqnmcBUwVctYmI";
 
 const writeToSheet = async (sheetData1, sheetData2) => {
-  const currentTime = new Date(Date.now())
-    .toISOString()
-    .slice(0, 19)
-    .replace("T", " ");
+  // const currentTime = new Date(Date.now())
+  //   .toISOString()
+  //   .slice(0, 19)
+  //   .replace("T", " ");
 
   try {
     const countryLiveDataRequest = {
@@ -24,7 +32,7 @@ const writeToSheet = async (sheetData1, sheetData2) => {
 
     const statusSheetData = [
       ["Status", "Last Checked"],
-      ["Time", time],
+      ["Time", currentTime],
     ];
     const statusRequest = {
       spreadsheetId: SPREADSHEET_ID,

@@ -40,9 +40,6 @@ const fetchRewards = async () => {
     // Get formatted data for Google Sheets & send notifications
     const { sheetData1, sheetData2 } = checkAvailability(rewardsArray);
     console.log(sheetData1);
-    console.log(sheetData2);
-
-    // console.log(rewardsArray[0].dataArray);
 
     // Write to Google Sheets
     await writeToSheet(sheetData1, sheetData2);

@@ -8,3 +8,4 @@ node_modules/*
 .vercel
 credentials.json
 data.js
+index.html

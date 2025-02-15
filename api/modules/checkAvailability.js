@@ -1,11 +1,21 @@
 import sendNotification from "./sendNotification.js";
-import time from "./time.js";
+// import time from "./time.js";
+import { DateTime } from "luxon";
+
+const currentTime = DateTime.now()
+  .setZone("Asia/Karachi")
+  .setLocale("ur-PK")
+  .toFormat("HH:mm:ss, dd-MM-yyyy");
+
 const checkAvailability = (rogData) => {
   const result = {
     status: "ok",
     data: [],
   };
-
+  // const currentTime = new Date(Date.now())
+  //   .toISOString()
+  //   .slice(0, 19)
+  //   .replace("T", " ");
   const sheetData1 = [];
   const sheetData2 = [];
 
@@ -27,7 +37,7 @@ const checkAvailability = (rogData) => {
       status,
       has400 ? "400" : "",
       has200 ? "200" : "",
-      time,
+      currentTime,
     ];
     sheetData1.push(row);
 
@@ -35,9 +45,8 @@ const checkAvailability = (rogData) => {
       country: each.country,
       status: status,
       reward: `${has400 ? "400 " : ""}${has200 ? "200" : ""}`.trim(),
-      time: time,
+      time: currentTime,
     });
-    // console.log(result.data);
 
     if (has400 || has200) {
       sheetData2.push(row);
