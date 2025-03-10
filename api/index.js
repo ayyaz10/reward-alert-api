@@ -7,7 +7,11 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["http://127.0.0.1:5500", "https://test.microstun.com"],
+    origin: [
+      "http://127.0.0.1:5500",
+      "https://test.microstun.com",
+      "https://gsf.guesssolutions.com",
+    ],
     methods: ["GET"],
     allowedHeaders: ["Content-Type"],
   })
