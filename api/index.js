@@ -17,7 +17,7 @@ app.use(
       "https://gsf.guesssolutions.com",
       "https://shopbond.nyc",
     ],
-    methods: ["GET"],
+    methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type"],
   })
 );
@@ -64,7 +64,7 @@ const writeToSheet = async (sheetData) => {
 };
 
 // API endpoint to receive form submissions
-app.post("/api/submit", async (req, res) => {
+app.post("/contact-submit", async (req, res) => {
   try {
     const { name, phoneNumber } = req.body;
     console.log(name, phoneNumber); // Basic validation
